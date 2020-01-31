@@ -3,7 +3,7 @@ function arrowConnector() {
   var svg, arrows;
 
   var lineTypes = {
-    "straight": d3.svg.line().x(ƒ('x')).y(ƒ('y')),
+    // "straight": d3.svg.line().x(ƒ('x')).y(ƒ('y')),
     "swoopy": swoopyArrow().degrees(Math.PI/4),
     "kooky": kooky,
     "loopy": loopy,
@@ -33,7 +33,7 @@ function arrowConnector() {
         .style("height", "100%")
         .style("overflow", "visible")
         .style("pointer-events", "none");
-      
+
       // arrowhead def
       svg.append('defs')
         .append("marker")
@@ -61,31 +61,9 @@ function arrowConnector() {
       .classed("arrow-connector", true)
       .attr("d", lineTypes[lineType])
       .attr('marker-end', 'url(#arrowhead)')
-      .style('opacity', 0)
+      .style('opacity', 1)
       .style('stroke-dasharray', function() { return this.getTotalLength(); })
-      .style('stroke-dashoffset', function() { return this.getTotalLength(); })
-      .each(function(d,i) {
-        var arrow = this;
-        d.forEach(function(dd,ii) {
-          d3.select(dd.ref)
-            .datum({'arrow': arrow})
-            .on('animationend', function(ddd,iii) { 
-              d3.select(d3.select(this).datum().arrow)
-                .transition()
-                .duration(2000)
-                .style('opacity', 1)
-                .style('stroke-dashoffset', 0);
-            });
-        })
-      });
-
-    // update selection
-    // (weird hack: reads opacity style to infer how far along the intro transition is)
-    arrows
-      .attr("d", lineTypes[lineType])
-      .style('stroke-dasharray', function() { return this.getTotalLength(); })
-      .style('stroke-dashoffset', function() { return (1 - d3.select(this).style('opacity')) * this.getTotalLength(); });
-
+      .style('stroke-dashoffset', 0);
   }
 
   function getPairs(sel) {

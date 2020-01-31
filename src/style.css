@@ -23,3 +23,16 @@ body {
   left: 400px;
   top: 200px;
 }
+
+.c {
+  background-color: lightyellow;
+  position: absolute;
+  right: 400px;
+  top: 100px;
+}
+
+.d {
+  background-color: lightcoral;
+  position: relative;
+  top: 200px;
+}
