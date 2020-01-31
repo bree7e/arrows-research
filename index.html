@@ -13,14 +13,27 @@
     <div class="vepp c" id="c">C</div>
     <div class="vepp d" id="d">D</div>
 
-    <!-- domarrow start -->
-    <!-- head, tail - концы стрелок -->
-    <!-- fromX, fromY, toX, toY - от 0 до 1 положение стрелки на контейнере -->
-    <script src="/src/libs/domarrow/domarrow.js"></script>
-    <link rel="stylesheet" href="/src/libs/domarrow/domarrow.css">
-    <connection from="#a" to="#b" color="red" tail fromX="0.8" fromY="1.2" toX="-0.1" toY="0.25"></connection>
-    <connection from="#a" to="#c" color="green" fromX="1" tail onlyVisible></connection>
-    <!-- domarrow end -->
-    <script src="/src/script.js"></script>
+    <!-- leader-line start -->
+    <script src="/src/libs/leader-line/leader-line.min.js"></script>
+    <!-- leader-line end -->
+    <script>
+      new LeaderLine(
+        LeaderLine.pointAnchor(document.getElementById("a"), {
+          x: '110%',
+        }),
+        LeaderLine.pointAnchor(document.getElementById("b"), {
+          x: 50,
+          y: -20
+        }),
+        {
+          color: 'white',
+          size: 3,
+          endPlugSize: 1.5,
+          startSocket: 'right',
+          endSocket: 'top'
+        }
+      );
+
+    </script>
   </body>
 </html>
