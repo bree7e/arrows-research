@@ -3,7 +3,7 @@ body {
     Helvetica Neue, sans-serif;
 }
 
-div {
+.vepp {
   height: 100px;
   width: 200px;
   border: 1px solid gray;

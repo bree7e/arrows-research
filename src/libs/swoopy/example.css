@@ -1,0 +1,19 @@
+.swoopy-svg {
+  width: 200px;
+  height: 200px;
+  overflow: visible;
+}
+
+svg.arrow-container {
+  z-index: -1;
+}
+
+path.arrow,
+#arrowhead {
+  fill: none;
+  stroke: black;
+}
+
+path.arrow.light {
+  opacity: 0.1;
+}
