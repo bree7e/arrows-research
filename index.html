@@ -8,27 +8,19 @@
     <title>Arrows</title>
   </head>
   <body>
-    <div class="vepp a" data-arrow-target="#a">A</div>
-    <div class="vepp b" id="a">B</div>
-    <!-- <script type="module" src="/dist/index.js"></script> -->
-    <div class="vepp c" data-arrow-target="#c">C</div>
-    <div class="vepp d" id="c">D</div>
+    <div class="vepp a" id="a">A</div>
+    <div class="vepp b" id="b">B</div>
+    <div class="vepp c" id="c">C</div>
+    <div class="vepp d" id="d">D</div>
 
-    <!-- swoopy start -->
-    <!-- dependency -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-    <!-- library -->
-    <script src="/src/libs/swoopy/swoopyArrow.js"></script>
-    <script src="/src/libs/swoopy/arrowConnector.js"></script>
+    <!-- domarrow start -->
+    <!-- head, tail - концы стрелок -->
+    <!-- fromX, fromY, toX, toY - от 0 до 1 положение стрелки на контейнере -->
+    <script src="/src/libs/domarrow/domarrow.js"></script>
+    <link rel="stylesheet" href="/src/libs/domarrow/domarrow.css">
+    <connection from="#a" to="#b" color="red" tail fromX="0.8" fromY="1.2" toX="-0.1" toY="0.25"></connection>
+    <connection from="#a" to="#c" color="green" fromX="1" tail onlyVisible></connection>
+    <!-- domarrow end -->
     <script src="/src/script.js"></script>
-
-    <style type="text/css">
-      path.arrow-connector,
-      #arrowhead {
-        fill: none;
-        stroke: black;
-      }
-    </style>
-    <!-- swoopy end -->
   </body>
 </html>
